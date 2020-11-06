@@ -36,6 +36,7 @@ p {
   --black-logo: #000000;
   --lain-color: #ececec;
   --clients-color: #afb1b8;
+  --social-link-footer: rgba(255, 255, 255, 0.1);
 }
 
 .visually-hidden {
@@ -486,7 +487,28 @@ body {
   fill: var(--clients-color);
 }
 
+.social-icons-link:hover,
+.social-icons-link:focus {
+  background-color: var(--accent-color);
+}
+
 .social-icons-link:hover .social-icons-svg,
 .social-icons-link:focus .social-icons-svg {
-  fill: var(--accent-color);
+  fill: var(--bg-color);
+}
+
+.social-icons-link-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--social-link-footer);
+  border-radius: 50%;
+}
+
+.social-icons-svg-footer {
+  width: 20px;
+  height: 20px;
+  fill: var(--bg-color);
 }
