@@ -438,15 +438,27 @@ body {
   justify-content: space-between;
 }
 
-.clients-items {
+.clients-flex .clients-items:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients-icons-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 170px;
   height: 90px;
 
   border: 1px solid var(--clients-color);
   border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  fill: var(--clients-color);
+}
+
+.clients-icons-link:hover,
+.clients-icons-link:focus {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 /* Стили для "Портфолио" */
