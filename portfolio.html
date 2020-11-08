@@ -11,7 +11,7 @@
   </head>
   <body>
     <!--Шапка сайта-->
-    <header class="header lain-header">
+    <header class="header">
       <div class="container header-container">
         <nav class="navigation">
           <a href="./index.html" class="logo-header"><span class="accent-logo">Web</span>Studio</a>
@@ -24,12 +24,22 @@
             </li>
             <li class="site-nav-item">
               <a href="" class="link">Контакты</a>
-            </li>
+            </li>          
           </ul>
         </nav>
         <ul class="contacts-header list">
-          <li class="contacts-header-item"><a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a></li>
-          <li class="contacts-header-item"><a href="tel:+380961111111" class="link">+38 096 111 11 11</a></li>
+          <li class="contacts-header-item">
+            <a href="mailto:info@devstudio.com" class="link contacts-link">
+              <svg class="contacts-icons-svg" width="16px" height="12px">
+                <use href="./images/symbol-defs.svg#icon-mail"></use>
+            </svg>info@devstudio.com</a>
+          </li>
+          <li class="contacts-header-item">
+            <a href="tel:+380961111111" class="link contacts-link">
+              <svg class="contacts-icons-svg" width="10px" height="16px">
+                <use href="./images/symbol-defs.svg#icon-phone"></use>
+            </svg>+38 096 111 11 11</a>
+          </li>
         </ul>
       </div>
     </header>
