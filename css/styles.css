@@ -20,6 +20,7 @@ h2,
 h3,
 p {
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 :root {
@@ -34,6 +35,7 @@ p {
   --hero-text-color: #ffffff;
   --white-logo: #ffffff;
   --black-logo: #000000;
+  --grey: #f5f4fa;
   --lain-color: #ececec;
   --clients-color: #afb1b8;
   --social-link-footer: rgba(255, 255, 255, 0.1);
@@ -138,11 +140,27 @@ body {
 
 .contacts-header {
   display: flex;
+  align-items: center;
+}
+
+.contacts-header-item {
+  display: inline-flex;
+  align-items: baseline;
+}
+.contacts-link {
+  display: inline-flex;
+  align-items: contents;
 }
 
 .contacts-header-item:not(:last-child) {
   margin-right: 50px;
 }
+
+.contacts-link:hover .contacts-icons-svg,
+.contacts-link:focus .contacts-icons-svg {
+  fill: var(--accent-color);
+}
+
 .contacts-header .link {
   color: var(--text-color);
 
@@ -152,9 +170,16 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
 }
+
 .contacts-header .link:hover,
 .contacts-header .link:focus {
   color: var(--accent-color);
+}
+
+.contacts-icons-svg {
+  margin-right: 10px;
+
+  fill: var(--text-color);
 }
 
 /* footer */
@@ -206,12 +231,60 @@ body {
   color: var(--accent-color);
 }
 
+.footer-link-box {
+  padding-left: 156px;
+}
+
+.footer-text {
+  padding-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--bg-color);
+}
+
+.social-icons-footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.social-icons-link-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--social-link-footer);
+  border-radius: 50%;
+}
+
+.social-icons-svg-footer {
+  width: 20px;
+  height: 20px;
+  fill: var(--bg-color);
+}
+
+.social-icons-link-footer:hover,
+.social-icons-link-footer:focus {
+  background-color: var(--accent-color);
+}
+
+.footer-box {
+  display: flex;
+  align-items: baseline;
+}
+
 /* Стили для "Студия" */
 
 /* HERO */
 .section-hero {
   height: 600px;
-  min-width: 1600px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 200px;
@@ -225,11 +298,19 @@ body {
     ),
     url(../images/bg-fon.jpg);
   background-repeat: no-repeat;
-  background-position: center, center;
-  background-size: cover, cover;
+  background-position: center;
+  background-size: cover;
+}
 
+.hero-text-box {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
 }
+
 .hero-title {
   margin-top: 0;
   margin-bottom: 30px;
@@ -280,6 +361,18 @@ body {
 /* Features */
 .features {
   display: flex;
+}
+
+.grey-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--grey);
+  width: 270px;
+  height: 120px;
+  border-radius: 4px;
+  margin-bottom: 30px;
 }
 
 .features-item:not(:last-child) {
@@ -353,6 +446,8 @@ body {
 }
 
 .team .position {
+  margin-bottom: 16px;
+
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
@@ -370,15 +465,27 @@ body {
   justify-content: space-between;
 }
 
-.clients-items {
+.clients-flex .clients-items:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients-icons-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 170px;
   height: 90px;
 
   border: 1px solid var(--clients-color);
   border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  fill: var(--clients-color);
+}
+
+.clients-icons-link:hover,
+.clients-icons-link:focus {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 /* Стили для "Портфолио" */
@@ -412,6 +519,8 @@ body {
 .button-filter:focus {
   background-color: var(--accent-color);
   color: #ffffff;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .underlain {
@@ -451,6 +560,12 @@ body {
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
+}
+
+.flex-element:hover,
+.flex-element:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .flex-element:nth-child(3n) {
@@ -494,21 +609,5 @@ body {
 
 .social-icons-link:hover .social-icons-svg,
 .social-icons-link:focus .social-icons-svg {
-  fill: var(--bg-color);
-}
-
-.social-icons-link-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  background-color: var(--social-link-footer);
-  border-radius: 50%;
-}
-
-.social-icons-svg-footer {
-  width: 20px;
-  height: 20px;
   fill: var(--bg-color);
 }
